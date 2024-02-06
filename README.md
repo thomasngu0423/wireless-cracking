@@ -14,7 +14,7 @@ wash -i wlan0mon
 sudo reaver -b <bssid of the AP> -i wlan0mon -v -K
 ```
 
-## WEP Cracking
+## WEP Cracking (Clientless)
 1. Put the interface into monitor mode
 ```
 airmon-ng start wlan0
