@@ -1,10 +1,11 @@
 # wireless-cracking
 
 ## Table Of Content
-  * [Info Gathering)](#info-gathering)
+  * [Info Gathering](#info-gathering)
   * [WPS Attack](#wps-attack)
-  * [WEP Cracking (Clientless)](#bypassing-application-only-trusted-system-certificates)
-  * [WEP Cracking (Connected Client)](#sign-the-apk-optional)
+  * [WEP Cracking (Clientless)](#wep-cracking-clientless)
+  * [WEP Cracking (Connected Client)](#wep-cracking-connected-client)
+  * [WEP Cracking (Connected Client [Other Method])](#wep-cracking-connected-client-other-method)
 
 ## Info Gathering
 - Get MAC Address of wireless network card
