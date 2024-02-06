@@ -6,7 +6,7 @@
   * [WEP Cracking (Clientless)](#wep-cracking-clientless)
   * [WEP Cracking (Connected Client)](#wep-cracking-connected-client)
   * [WEP Cracking (Connected Client [Other Method])](#wep-cracking-connected-client-other-method)
-  * [WPA-Enterprise Cracking](#wpa--enterprise-cracking)
+  * [WPA-Enterprise Cracking](#wpa-enterprise-cracking)
 
 ## Info Gathering
 - Get MAC Address of wireless network card
