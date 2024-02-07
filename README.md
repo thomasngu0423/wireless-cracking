@@ -177,6 +177,7 @@ rm dh
 make
 ```
 **If Certificate already exist, then run "make destroycerts" to clean up**
+
 8. Configure hostapd-mana to host a rougue AP
 9. Edit the configuration file
 ```
