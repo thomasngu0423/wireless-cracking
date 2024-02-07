@@ -264,6 +264,6 @@ aireplay-ng -0 1 -a <bssid of the AP> -h <wireless card MAC addr> wlan0mon
 sudo airmon-ng stop wlan0mon
 ```
 3. Analyze the captured file with Wireshark
-4. Filter the certificate by using "tls.handshake.certificate"
+4. Filter the certificate by using `tls.handshake.certificate`
 5. Packet Details pane - Open Extensible Authentication Protocol - Transport Layer Security
 
