@@ -280,6 +280,7 @@ network={
    scan_ssid=1
    psk="passphrase"
    key_mgmt=WPA-PSK
+}
 ```
 ```
 sudo spa_supplicant -i wlan0 -c <config_file>
@@ -293,6 +294,7 @@ network={
    identity="domain\user"
    password="password"
    phase2="auth=MSCHAPV2"
+}
 ```
 ```
 sudo spa_supplicant -i wlan0 -c <config_file>
