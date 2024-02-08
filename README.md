@@ -342,3 +342,16 @@ network={
 sudo wpa_supplicant -i wlan0 -c <config_file>
 dhclient wlan0 -v
 ```
+- WEP
+```
+network={
+    ssid="target ssid"
+    key_mgmt=NONE
+    wep_key0="your_wep_key"
+    wep_tx_keyidx=0
+}
+```
+```
+sudo wpa_supplicant -i wlan0 -c <config_file>
+dhclient wlan0 -v
+```
