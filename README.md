@@ -272,4 +272,28 @@ sudo airmon-ng stop wlan0mon
 5. Packet Details pane - Open Extensible Authentication Protocol - Transport Layer Security
 6. Select `Export Packet Bytes` to save the data into a file with a .der extension.
 
-##Connect Wi-Fi through CLI
+## Connect Wi-Fi through CLI
+- WPA Personal
+```
+network={
+   ssid="target ssid"
+   scan_ssid=1
+   psk="passphrase"
+   key_mgmt=WPA-PSK
+```
+```
+sudo spa_supplicant -i wlan0 -c <config_file>
+```
+- WPA Enterprise
+```
+network={
+   ssid="target ssid"
+   key_mgmt=WPA-PSK
+   eap=PEAP
+   identity="domain\user"
+   password="password"
+   phase2="auth=MSCHAPV2"
+```
+```
+sudo spa_supplicant -i wlan0 -c <config_file>
+```
