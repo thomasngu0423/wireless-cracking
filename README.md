@@ -301,7 +301,7 @@ aireplay-ng -0 1 -a <bssid of the AP> -h <wireless card MAC addr> wlan0mon
 sudo airmon-ng stop wlan0mon
 ```
 3. Analyze the captured file with Wireshark
-4. Filter the certificate by using `tls.handshake.certificate`
+4. Filter the certificate by using `wlan.bssid==00:00:00:00:00:00 && eap && tls.handshake.certificate`
 5. Packet Details pane - Open Extensible Authentication Protocol - Transport Layer Security
 6. Select `Export Packet Bytes` to save the data into a file with a .der extension.
 7. ```openssl x509 -inform der -in CERTIFICATE_FILENAME.der -text```
