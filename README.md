@@ -7,6 +7,7 @@
   * [WEP Cracking (Connected Client)](#wep-cracking-connected-client)
   * [WEP Cracking (Connected Client [Other Method])](#wep-cracking-connected-client-other-method)
   * [WPA-Enterprise Cracking](#wpa-enterprise-cracking)
+  * [Connect Wi-Fi through CLI](#connect-wi-fi-through-cli)
 
 ## Info Gathering
 - Get MAC Address of wireless network card
@@ -271,3 +272,4 @@ sudo airmon-ng stop wlan0mon
 5. Packet Details pane - Open Extensible Authentication Protocol - Transport Layer Security
 6. Select `Export Packet Bytes` to save the data into a file with a .der extension.
 
+##Connect Wi-Fi through CLI
