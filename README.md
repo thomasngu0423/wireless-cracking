@@ -284,6 +284,7 @@ network={
 ```
 ```
 sudo wpa_supplicant -i wlan0 -c <config_file>
+dhclient wlan0 -v
 ```
 - WPA Enterprise
 ```
@@ -298,4 +299,5 @@ network={
 ```
 ```
 sudo wpa_supplicant -i wlan0 -c <config_file>
+dhclient wlan0 -v
 ```
