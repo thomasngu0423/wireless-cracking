@@ -308,9 +308,9 @@ sudo airmon-ng stop wlan0mon
 **Manual Craft CA cert**
 ```
 sudo openssl dhparam -out dh 2048
-sudo openssl req -new x509 -days 60 -nodes -out ca.pem -keyout ca.key
-sudo openssl req -new -nodes server.csr -keyout server.key
-sudo openssl req -days 60 -in server.csr -CA ca.pem -CAkey ca.key -set_serial 03 -out server.pem
+sudo openssl req -new x509 -days 60 -nodes -out ca.pem -keyout ca.key // openssl req -x509 -days 60 -nodes -keyout ca.key -out ca.pem
+sudo openssl req -new -nodes server.csr -keyout server.key // openssl req -new -nodes -keyout server.key -out server.csr
+sudo openssl x509 -req -days 60 -in server.csr -CA ca.pem -CAkey ca.key -set_serial 03 -out server.pem
 ```
 
 ## Connect Wi-Fi through CLI
