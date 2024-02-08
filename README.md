@@ -304,6 +304,7 @@ sudo airmon-ng stop wlan0mon
 4. Filter the certificate by using `tls.handshake.certificate`
 5. Packet Details pane - Open Extensible Authentication Protocol - Transport Layer Security
 6. Select `Export Packet Bytes` to save the data into a file with a .der extension.
+7. openssl x509 -inform der -in CERTIFICATE_FILENAME.der -text
 
 **Manual Craft CA cert**
 ```
