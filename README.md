@@ -269,4 +269,5 @@ sudo airmon-ng stop wlan0mon
 3. Analyze the captured file with Wireshark
 4. Filter the certificate by using `tls.handshake.certificate`
 5. Packet Details pane - Open Extensible Authentication Protocol - Transport Layer Security
+6. Select `Export Packet Bytes` to save the data into a file with a .der extension.
 
