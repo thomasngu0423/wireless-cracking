@@ -239,6 +239,39 @@ mana_eapsuccess=1
 # EAP TLS MitM
 mana_eaptls=1
 ```
+
+**Or**
+
+```
+interface=wlan0
+driver=nl80211
+
+ssid=ssidofthewifi
+hw_mode=g
+channel=6
+macaddr_acl=0
+ignore_broadcast_ssid=0
+
+auth_algs=3
+wpa=2
+wpa_key_mgmt=WPA-EAP
+rsn_pairwise=CCMP
+
+ieee80821x=1
+eap_server=1
+eapol_version=2
+eapol_key_index_workaround=0
+eap_user_file=eap_user.conf
+
+ca_cert=ca.pem
+server_cert=server.pem
+private_key=server.key
+dh_file=dh
+
+mana_wpe=1
+mana_credout_credout
+mana_eapsuccess=1
+```
 10. Create EAP user file
 ```
 nano /etc/hostapd-mana/mana.eap_user
@@ -271,6 +304,14 @@ sudo airmon-ng stop wlan0mon
 4. Filter the certificate by using `tls.handshake.certificate`
 5. Packet Details pane - Open Extensible Authentication Protocol - Transport Layer Security
 6. Select `Export Packet Bytes` to save the data into a file with a .der extension.
+
+**Manual Craft CA cert**
+```
+sudo openssl dhparam -out dh 2048
+sudo openssl req -new x509 -days 60 -nodes -out ca.pem -keyout ca.key
+sudo openssl req -new -nodes server.csr -keyout server.key
+sudo openssl req -days 60 -in server.csr -CA ca.pem -CAkey ca.key -set_serial 03 -out server.pem
+```
 
 ## Connect Wi-Fi through CLI
 - WPA Personal
