@@ -283,7 +283,7 @@ network={
 }
 ```
 ```
-sudo spa_supplicant -i wlan0 -c <config_file>
+sudo wpa_supplicant -i wlan0 -c <config_file>
 ```
 - WPA Enterprise
 ```
@@ -297,5 +297,5 @@ network={
 }
 ```
 ```
-sudo spa_supplicant -i wlan0 -c <config_file>
+sudo wpa_supplicant -i wlan0 -c <config_file>
 ```
