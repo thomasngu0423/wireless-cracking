@@ -361,33 +361,33 @@ dhclient wlan0 -v
 
 1. PEAP with GTC (Generic Token Card):
 
-EAP Phase I: PEAP (Protected Extensible Authentication Protocol)
-EAP Phase II: GTC (Generic Token Card)
+   EAP Phase I: PEAP (Protected Extensible Authentication Protocol)
+   EAP Phase II: GTC (Generic Token Card)
 PEAP provides a secure tunnel for transporting authentication data.
 GTC is a simple authentication method typically used with token cards for authentication.
 
 2. PEAP with MSCHAPv2 (Microsoft Challenge Handshake Authentication Protocol version 2):
 
-EAP Phase I: PEAP
-EAP Phase II: MSCHAPv2
+   EAP Phase I: PEAP
+   EAP Phase II: MSCHAPv2
 MSCHAPv2 is a widely used authentication protocol, particularly with Microsoft Windows networks.
 PEAP provides the secure tunnel for data transport.
 
 3. TTLS (Tunneled Transport Layer Security) with PAP (Password Authentication Protocol):
 
-EAP Phase I: TTLS
-EAP Phase II: PAP
+   EAP Phase I: TTLS
+   EAP Phase II: PAP
 TTLS establishes a secure tunnel for authentication.
 PAP is a simple authentication method where the password is sent in clear text.
 
 4. TTLS with CHAP (Challenge-Handshake Authentication Protocol):
 
-EAP Phase I: TTLS
-EAP Phase II: CHAP
+   EAP Phase I: TTLS
+   EAP Phase II: CHAP
 CHAP is a challenge-response authentication protocol.
 
 5. TTLS with MSCHAPv2:
 
-EAP Phase I: TTLS
-EAP Phase II: MSCHAPv2
+   EAP Phase I: TTLS
+   EAP Phase II: MSCHAPv2
 MSCHAPv2 provides secure authentication within the TTLS tunnel.
