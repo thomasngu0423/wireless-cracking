@@ -342,7 +342,7 @@ dhclient wlan0 -v
 ```
 network={
    ssid="target ssid"
-   key_mgmt=WPA-PSK
+   key_mgmt=WPA-EAP
    eap=PEAP
    identity="domain\user"
    password="password"
