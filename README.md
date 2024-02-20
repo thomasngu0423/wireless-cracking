@@ -311,7 +311,8 @@ tshark -r <capturedfile> -Y "eap && tls.handshake.certificate && frame.number ==
 tshark -r <capturedfile> -Y "frame.number == <packet number>" -T fields -e tls.handshake.cert_data > certificate.der
 ```
 7.
-```openssl x509 -inform der -in CERTIFICATE_FILENAME.der -text
+```
+   openssl x509 -inform der -in CERTIFICATE_FILENAME.der -text
    openssl x509 -in CERT_FILENAME -noout -enddate 
 ```
 8. View Identity in Extensible Authentication Protocol
