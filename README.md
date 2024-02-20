@@ -302,9 +302,19 @@ sudo airmon-ng stop wlan0mon
 ```
 3. Analyze the captured file with Wireshark
 4. Filter the certificate by using `wlan.bssid==00:00:00:00:00:00 && eap && tls.handshake.certificate`
+```
+tshark -r <capturedfile> -Y "eap && tls.handshake.certificate && frame.number == <packet number>" -V
+```
 5. Packet Details pane - Open Extensible Authentication Protocol - Transport Layer Security
 6. Select `Export Packet Bytes` to save the data into a file with a .der extension.
+```
+tshark -r <capturedfile> -Y "frame.number == <packet number>" -T fields -e tls.handshake.cert_data > certificate.der
+```
 7. ```openssl x509 -inform der -in CERTIFICATE_FILENAME.der -text```
+8. View Identity in Extensible Authentication Protocol
+```
+tshark -r <capturedfile> -Y "eapol && frame.number == <packet number>" -V
+```
 
 **Manual Craft CA cert**
 ```
